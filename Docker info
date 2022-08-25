@@ -1,0 +1,8 @@
+***Docker Installation on Amazon linux***
+yum update
+yum search docker
+yum info docker
+yum install docker
+systemctl enable docker.service
+systemctl start docker.service
+systemctl status docker.service
