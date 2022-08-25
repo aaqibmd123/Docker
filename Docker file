@@ -9,3 +9,18 @@ RUN service apache2 start
 #docker image build -t myimage:1 .
 
 -------------------------------------------------------------------------------------
+
+Docker file 2
+
+FROM ubuntu:latest
+MAINTAINER aaqibmd123@gmail.com
+RUN apt-get update
+RUN apt-get install -y apache2
+RUN apt-get install -y zip
+RUN apt-get install -y unzip
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page281/ogistic.zip /var/www/html/
+WORKDIR /var/www/html/
+RUN unzip ogistic.zip
+RUN cp -rvf ogistic/* .
+CMD service apache2 start 
+EXPOSE 80
