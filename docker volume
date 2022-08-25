@@ -1,0 +1,17 @@
+docker volume --help
+docker volume create myvolume
+docker volume ls
+docker volume inspect myvolume
+
+docker container run -it -v myvolume:/tmp --name web-server ubuntu /bin/bash
+cd /tmp/
+ls
+touch abc{1...10}
+ls
+
+****Now delete web-server container****
+And create new container name as web-server1
+
+
+
+docker container run -it -v myvolume:/tmp --name web-server1 ubuntu /bin/bash
